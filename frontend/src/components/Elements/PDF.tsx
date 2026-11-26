@@ -22,13 +22,14 @@ import {
   DialogPortal,
   DialogTitle
 } from '@/components/ui/dialog';
+import { withRootPath } from '@/lib/rootPath';
 
 import { type IPdfElement } from 'client-types/';
 
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
+pdfjs.GlobalWorkerOptions.workerSrc = withRootPath(workerUrl);
 
 interface PDFViewerProps {
   url: string;
